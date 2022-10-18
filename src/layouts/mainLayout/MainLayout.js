@@ -1,10 +1,11 @@
-import {MoviesList} from "../../components";
+import {MoviePage} from "../../pages";
+import css from './layout.module.css';
 
 function MainLayout() {
 
   return (
-    <div>
-    <MoviesList/>
+    <div className={css.layout}>
+    <MoviePage/>
     </div>
   );
 }

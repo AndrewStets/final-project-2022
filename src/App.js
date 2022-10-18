@@ -1,9 +1,14 @@
 import {MainLayout} from "./layouts";
+import {Route, Routes} from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <MainLayout/>
+        <Routes>
+            <Route path={'/'} element={<MainLayout/>}>
+                <Route path={''}></Route>
+            </Route>
+        </Routes>
     </div>
   );
 }

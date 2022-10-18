@@ -1,0 +1,34 @@
+.movieCard{
+    width: 220px;
+    height: 400px;
+    background: #4f4c4c;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.photo{
+    width: 90%;
+    height: 70%;
+    border-radius: 2px;
+    margin: 0 auto;
+    /*margin-top: 10px;*/
+
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text h3{
+    text-align: center;
+}
+
+.text p{
+    text-align: center;
+}

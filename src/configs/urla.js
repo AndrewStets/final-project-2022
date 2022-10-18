@@ -1,5 +1,7 @@
 const baseURL = 'https://api.themoviedb.org/3';
 
+const poster = 'https://image.tmdb.org/t/p/w200'
+
 const urls = {
     movies: '/discover/movie',
     movie: '/movies/:id',
@@ -9,5 +11,6 @@ const urls = {
 
 export {
     baseURL,
-    urls
+    urls,
+    poster
 };
