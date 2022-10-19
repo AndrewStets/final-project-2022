@@ -8,7 +8,7 @@ function MoviesListCard({movie}) {
 
   return (
     <div className={css.movieCard}>
-        <NavLink to={`movies/${id}`} state={{...movie}}>
+        <NavLink to={`/movies/${id}`} state={{...movie}}>
         <div className={css.photo}>
             <img src={`${poster}${poster_path}`} alt={title}/>
       </div>

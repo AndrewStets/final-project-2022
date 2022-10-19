@@ -9,11 +9,7 @@ function MovieInfo() {
   return (
     <div>
       <div>
-        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
-      </div>
-      <div>
-        <div>{JSON.stringify(movie)}</div>
-        <div></div>
+        <img src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}/>
       </div>
     </div>
   );

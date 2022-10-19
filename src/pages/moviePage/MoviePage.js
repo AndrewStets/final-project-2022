@@ -1,10 +1,9 @@
-import {Header, MoviesList} from "../../components";
+import {MoviesList} from "../../components";
 
 function MoviePage() {
 
   return (
     <div>
-      <Header/>
     <MoviesList/>
     </div>
   );

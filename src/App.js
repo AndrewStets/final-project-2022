@@ -1,15 +1,16 @@
-import {MainLayout} from "./layouts";
 import {Navigate, Route, Routes} from "react-router-dom";
-import {HomePage} from "./pages";
-import {MovieInfo, MoviesList} from "./components";
+
+import {MainLayout} from "./layouts";
+import {MoviePage} from "./pages";
+import {MovieInfo} from "./components";
 
 function App() {
   return (
     <div>
         <Routes>
             <Route path={'/'} element={<MainLayout/>}>
-                <Route index element={<Navigate to={'home'}/>}/>
-                <Route path={'movies'} element={<MoviesList/>}/>
+                <Route index element={<Navigate to={'movies'}/>}/>
+                <Route path={'movies'} element={<MoviePage/>}/>
                 <Route path={'movies/:id'} element={<MovieInfo/>}/>
             </Route>
         </Routes>
