@@ -1,0 +1,12 @@
+.all_header{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.all_header input{
+    width: 500px;
+    height: 20px;
+    background-color: #a89898;
+    border-radius: 50px;
+}

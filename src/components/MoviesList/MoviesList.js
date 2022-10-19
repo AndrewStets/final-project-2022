@@ -39,7 +39,7 @@ function MoviesList() {
 
   return (
     <div>
-      <div>
+      <div className={css.pagin}>
         <button onClick={prevPage}>Prev</button>
         <button onClick={nextPage}>Next</button>
       </div>
