@@ -25,10 +25,15 @@
     justify-content: center;
 }
 
-.text h3{
+.text h4{
     text-align: center;
 }
 
-.text p{
+.text h6{
     text-align: center;
+}
+
+.stars {
+    width: 180px;
+    height: 15px;
 }

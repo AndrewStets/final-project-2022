@@ -1,6 +1,8 @@
+import {NavLink} from "react-router-dom";
+
 import {poster} from "../../configs";
 import css from './movieCard.module.css'
-import {NavLink} from "react-router-dom";
+import {StarRating} from "../StarsRating/StarsRating";
 
 function MoviesListCard({movie}) {
   const {title, poster_path, release_date, id} = movie;
@@ -13,10 +15,13 @@ function MoviesListCard({movie}) {
             <img src={`${poster}${poster_path}`} alt={title}/>
       </div>
         <div className={css.text}>
-            <h3>{title}</h3>
-            <p>{release_date}</p>
+            <h4>{title}</h4>
+            <h6>{release_date}</h6>
         </div>
         </NavLink>
+        <div className={css.stars}>
+            {<StarRating movie={movie}/>}
+        </div>
         <hr/>
     </div>
   );
