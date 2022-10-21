@@ -12,7 +12,7 @@ function MoviesListCard({movie}) {
   return (
     <div className={css.movieCard}>
         {/*<GanreBadge/>*/}
-        <NavLink to={`/movies/${id}`} state={{...movie}}>
+        <NavLink to={`/movies/${id}`} state={{...movie}} className={css.nav_link}>
         <div className={css.photo}>
             <img src={`${poster}${poster_path}`} alt={title}/>
         </div>

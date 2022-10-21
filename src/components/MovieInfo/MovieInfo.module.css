@@ -1,0 +1,52 @@
+body{
+
+}
+
+.movie_info{
+    height: 100vh;
+    background: #383434;
+}
+
+.all_ellem{
+    display: flex;
+    justify-content: center;
+}
+
+.text{
+    width: 500px;
+    height: 700px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.text p{
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.movie_post{
+    width: 400px;
+    height: 600px;
+}
+
+.about_movie{
+}
+
+.about_movie h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+.imdb{
+    display: flex;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.imdb_el{
+    display: flex;
+}
+
+.nav_link{
+    text-decoration: none;
+}
