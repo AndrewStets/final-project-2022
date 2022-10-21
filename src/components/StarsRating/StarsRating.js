@@ -1,14 +1,8 @@
 import {useState} from "react";
-import {useLocation} from "react-router-dom";
 
 import {Star} from "./Star";
 
 const StarRating = ({movie}) => {
-
-    // const location = useLocation();
-    // const {state:movie} = location;
-
-    // console.log(movie);
 
     const [rating, setRating] =useState(parseInt(movie.vote_average));
     const [selection, setSelection] =useState(null);

@@ -1,8 +1,11 @@
+import {Badge} from "react-bootstrap";
+
 function GanreBadge() {
 
   return (
     <div>
-    GanreBadge
+      <Badge pill bg="success">
+      </Badge>{''}
     </div>
   );
 }
