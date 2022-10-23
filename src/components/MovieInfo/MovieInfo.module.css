@@ -4,7 +4,7 @@ body{
 
 .movie_info{
     height: 100vh;
-    background: #383434;
+    background: #423e3e;
 }
 
 .all_ellem{
@@ -30,6 +30,7 @@ body{
 }
 
 .about_movie{
+    background: #423e3e;
 }
 
 .about_movie h1{

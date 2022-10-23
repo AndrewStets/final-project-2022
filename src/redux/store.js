@@ -4,7 +4,7 @@ import {genreReducer, movieReducer} from "./slices";
 
 const rootReducer = combineReducers({
     movies: movieReducer,
-    genreReducer
+    genres:genreReducer
 });
 
 const setupStore = () => configureStore({
