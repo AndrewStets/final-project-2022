@@ -6,8 +6,8 @@ const initialState = {
     movies: [],
     loading: false,
     errors: null,
-    // movieName: {}
-    movieName1:{}
+    movieName: {}
+    // movieName1:{}
 };
 
 const getAllMovies = createAsyncThunk(
@@ -22,23 +22,11 @@ const getAllMovies = createAsyncThunk(
     }
 );
 
-// const getMovieName = createAsyncThunk(
-//     'movieSlice/getMovieName',
-//     async ({name}, {rejectWithValue}) => {
-//         try {
-//             const {data} = await movieService.searchMovie(name);
-//             return data;
-//         }catch (e) {
-//             return rejectWithValue(e.response.data);
-//         }
-//     }
-// );
-
-const getMovieByName = createAsyncThunk(
-    'movieSlice/getMovieByName',
-    async ({query, page}, {rejectWithValue}) => {
+const getMovieName = createAsyncThunk(
+    'movieSlice/getMovieName',
+    async ({name}, {rejectWithValue}) => {
         try {
-            const {data} = await movieService.searchMovie1(query, page);
+            const {data} = await movieService.searchMovie(name);
             return data;
         }catch (e) {
             return rejectWithValue(e.response.data);
@@ -49,9 +37,9 @@ const getMovieByName = createAsyncThunk(
 
 const getMovieByGenre = createAsyncThunk(
     'genreSlice/getMovieByGenre',
-    async ({with_genre,page}, {rejectWithValue}) => {
+    async ({with_genres,page}, {rejectWithValue}) => {
         try {
-            const {data} = await movieService.getMovie(with_genre,page);
+            const {data} = await movieService.getMovie(with_genres,page);
             return data;
         } catch (e) {
             return rejectWithValue(e.response.data);
@@ -81,21 +69,13 @@ const movieSlice = createSlice({
             .addCase(getMovieByGenre.pending, (state, action) => {
                 state.loading = true;
             })
-            // .addCase(getMovieName.fulfilled, (state, action) => {
-            //     state.movieName = action.payload;
-            //     state.errors = null;
-            //     state.loading = true;
-            // })
-            // .addCase(getMovieName.pending, (state, action) => {
-            //     state.loading = action.payload;
-            // })
-            .addCase(getMovieByName.fulfilled, (state, action) => {
-                state.movieName1 = action.payload;
+            .addCase(getMovieName.fulfilled, (state, action) => {
+                state.movieName = action.payload;
                 state.errors = null;
                 state.loading = true;
             })
-            .addCase(getMovieByName.pending, (state, action) => {
-                state.movieName1 = action.payload;
+            .addCase(getMovieName.pending, (state, action) => {
+                state.loading = action.payload;
             })
             .addDefaultCase((state, action) => {
                 const [pathElement] = action.type.split('/').splice(-1);
@@ -111,8 +91,8 @@ const {reducer: movieReducer} = movieSlice;
 const movieActions = {
     getAllMovies,
     getMovieByGenre,
-    // getMovieName
-    getMovieByName
+    getMovieName
+    // getMovieByName
 };
 
 export {
@@ -129,6 +109,100 @@ export {
 
 
 
+// const getMovieName = createAsyncThunk(
+//     'movieSlice/getMovieName',
+//     async ({name}, {rejectWithValue}) => {
+//         try {
+//             const {data} = await movieService.searchMovie(name);
+//             return data;
+//         }catch (e) {
+//             return rejectWithValue(e.response.data);
+//         }
+//     }
+// );
+
+// const getMovieByName = createAsyncThunk(
+//     'movieSlice/getMovieByName',
+//     async ({query, page}, {rejectWithValue}) => {
+//         try {
+//             const {data} = await movieService.searchMovie1(query, page);
+//             return data;
+//         }catch (e) {
+//             return rejectWithValue(e.response.data);
+//         }
+//     }
+// );
+
+
+
+
+
+
+
+
+
+// .addCase(getMovieName.fulfilled, (state, action) => {
+//     state.movieName = action.payload;
+//     state.errors = null;
+//     state.loading = true;
+// })
+// .addCase(getMovieName.pending, (state, action) => {
+//     state.loading = action.payload;
+// })
+// .addCase(getMovieByName.fulfilled, (state, action) => {
+//     state.movieName1 = action.payload;
+//     state.errors = null;
+//     state.loading = true;
+// })
+// .addCase(getMovieByName.pending, (state, action) => {
+//     state.movieName1 = action.payload;
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
 // const initialState = {
 //     movies: [],
 //     currentMovies: null,

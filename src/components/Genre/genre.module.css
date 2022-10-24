@@ -1,3 +1,42 @@
-.btn button{
-    background: darkgray;
+/*.btn button{*/
+/*    background: darkgray;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.link_btn{*/
+/*    width: 50px;*/
+/*    height: 25px;*/
+/*    margin: 5px;*/
+/*    border: 2px salmon solid;*/
+/*}*/
+
+/*.link_btn a link:hover{*/
+/*    text-decoration: none;*/
+/*    text-align: center;*/
+/*    vertical-align: center;*/
+/*}*/
+
+.btn{
+   width: 12%;
+    height: 40px;
+    margin: 5px;
+    border: 2px #6e1717 solid;
+    background-color: #282222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn link:hover{
+    text-decoration: none;
+
+}
+a:hover{
+    text-decoration: none;
+}
+
+a:link{
+    text-decoration: none;
 }

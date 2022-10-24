@@ -1,5 +1,5 @@
 import css from './Layout.module.css';
-import {Header} from "../../components";
+import {Header} from '../../components';
 import {Outlet} from "react-router-dom";
 
 function MainLayout() {
@@ -7,7 +7,7 @@ function MainLayout() {
   return (
     <div className={css.layout}>
       <Header/>
-      <Outlet/>
+        <Outlet/>
     </div>
   );
 }

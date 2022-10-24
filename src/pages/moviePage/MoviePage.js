@@ -1,12 +1,14 @@
-import {MoviesList} from "../../components";
+import {Genre, MoviesList} from "../../components";
 import css from './MoviePage.module.css';
 
 function MoviePage() {
 
   return (
-    <div className={css.moviePage}>
-    <MoviesList/>
-    </div>
+      <div>
+          <div className={css.moviePage}>
+              <MoviesList/>
+          </div>
+      </div>
   );
 }
 

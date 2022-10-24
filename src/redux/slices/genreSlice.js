@@ -11,7 +11,7 @@ const getAll = createAsyncThunk(
     'genreSlice/getAll',
 async (_,{rejectWithValue}) => {
         try {
-            const {data} = await genreService.getAl();
+            const {data} = await genreService.getAll();
             return data
         }catch (e) {
             return rejectWithValue(e.response.data)

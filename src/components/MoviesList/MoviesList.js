@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
-import {useSearchParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useLocation, useParams, useSearchParams} from "react-router-dom";
+import {useEffect} from "react";
 
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 import {movieActions} from "../../redux/slices";
@@ -11,31 +11,27 @@ function MoviesList() {
   const {movies, loading} = useSelector(state => state.movies);
   const {results} = movies;
 
-  const {genres} = useSelector(state => state.genres);
-  // const {genre} = genres;
-
   const dispatch = useDispatch();
+  const {id:genreID} = useParams();
 
-  const [query, setQuery] = useSearchParams({with_genres: `${genre.id}`, page: '1'});
+  const [query, setQuery] = useSearchParams({with_genres:genreID,page: '1'});
 
-  const queryParams = query.get('with_genres','page');
-
+  const with_genres = query.get('with_genres');
   const page = query.get('page');
 
   useEffect(() => {
     dispatch(movieActions.getAllMovies({page}))
+
   }, [page]);
 
-  const [genre,setGenre] = useState('');
-
-  const getMByGenre = (event) => {
-    setGenre(event.target.value)
-    console.log(setGenre(event.target.value));
-  };
+  console.log(typeof genreID);
+  // const {state} = useLocation();
+  // console.log(state);
 
   useEffect(() => {
-    dispatch(movieActions.getMovieByGenre({queryParams}))
-  },[genre.id,page]);
+    dispatch(movieActions.getMovieByGenre({with_genres,page}))
+
+  },[genreID,page]);
 
   const prevPage = () => {
     const prev = +page - 1;
@@ -52,20 +48,15 @@ function MoviesList() {
   };
 
   return (
-    <div>
+      <div>
         <div className={css.pagin}>
           <button onClick={prevPage}>Prev</button>
           <button onClick={nextPage}>Next</button>
         </div>
-          <div>
-            {genres?.genres.map(genre=>
-                <button key={genre.id} onClick={()=>getMByGenre(genre.id)} className={css.btn}>{genre.name}</button>)}
-          </div>
-            {/*{loading && <h2>Loading....................</h2>}*/}
         <div className={css.movies}>
-              {results?.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+          {results?.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
         </div>
-    </div>
+      </div>
   );
 }
 
@@ -76,21 +67,39 @@ export {MoviesList};
 
 
 
+//
 // function MoviesList() {
 //
 //   const {movies, loading} = useSelector(state => state.movies);
 //   const {results} = movies;
 //
+//   const {genres} = useSelector(state => state.genres);
+//   // const {genre} = genres;
+//
+//   const {id:genreID} = useParams();
+//
 //   const dispatch = useDispatch();
 //
-//   const [query, setQuery] = useSearchParams({page: '1'});
+//   const [query, setQuery] = useSearchParams({with_genres: `${genreID}`, page: '1'});
+//
+//   const with_genres = query.get('with_genres');
 //
 //   const page = query.get('page');
 //
 //   useEffect(() => {
-//     dispatch(movieActions.getAll({page}))
-//
+//     dispatch(movieActions.getAllMovies({page}))
 //   }, [page]);
+//
+//   // const [genre,setGenre] = useState('');
+//
+//   // const getMByGenre = (event) => {
+//   //   setGenre(event.target.value)
+//   //   console.log(setGenre(event.target.value));
+//   // };
+//
+//   useEffect(() => {
+//     dispatch(movieActions.getMovieByGenre({with_genres,page}))
+//   },[genreID,page]);
 //
 //   const prevPage = () => {
 //     const prev = +page - 1;
@@ -107,19 +116,31 @@ export {MoviesList};
 //   };
 //
 //   return (
-//       <div>
+//     <div>
 //         <div className={css.pagin}>
 //           <button onClick={prevPage}>Prev</button>
 //           <button onClick={nextPage}>Next</button>
 //         </div>
+//           <div>
+//             {/*{genres?.genres.map(genre=>*/}
+//             {/*    <button key={genre.id} onClick={()=>getMByGenre(genre.id)} className={css.btn}>{genre.name}</button>)}*/}
+//           </div>
+//             {/*{loading && <h2>Loading....................</h2>}*/}
 //         <div className={css.movies}>
-//           {results?.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+//               {results?.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
 //         </div>
-//       </div>
+//     </div>
 //   );
 // }
 //
 // export {MoviesList};
+//
+//
+//
+
+
+
+
 
 
   // useEffect(() => {

@@ -8,3 +8,11 @@ body{
     margin: 0 auto;
     background: #423e3e;
 }
+
+.gen_film{
+    display: flex;
+}
+
+.film_gen{
+    display: flex;
+}

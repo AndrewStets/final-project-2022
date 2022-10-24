@@ -7,8 +7,8 @@ const urls = {
     movie: '/movies/:id',
     genres:'/genre/movie/list',
     getMovieByGenres:'/discover/movie',
-    // searchMovie:'/search/keyword?query='
-    searchMovie1:'/search_results'
+    searchMovie:'/search/keyword',
+    searchMovie1:''
 };
 
 export {

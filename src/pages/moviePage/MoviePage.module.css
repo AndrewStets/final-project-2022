@@ -2,3 +2,7 @@
     background: #423e3e;
     width: 100%;
 }
+
+.gen_film{
+    display: flex;
+}
