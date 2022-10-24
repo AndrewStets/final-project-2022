@@ -25,12 +25,11 @@ function Header() {
 
   return (
     <div>
-        <div>
-            <Link  to={'/'} onClick={{refresh}}>HOME</Link>
-                <button onClick={changeTheme}>Theme</button>
+        <div className={css.move_btn}>
+            <Link  to={'/'} onClick={{refresh}} className={css.link_mov}>Movie</Link>
+                {/*<button onClick={changeTheme}>Theme</button>*/}
                     <div className={css.all_header}>
                         <SearchForm/>
-                    {/*<input type={'text'} name={'search film'} placeholder={'Search'}/>*/}
                     </div>
             <div>
                 <Genres/>

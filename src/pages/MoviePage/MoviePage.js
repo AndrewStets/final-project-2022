@@ -1,4 +1,4 @@
-import {Genre, MoviesList} from "../../components";
+import {MoviesList} from "../../components";
 import css from './MoviePage.module.css';
 
 function MoviePage() {

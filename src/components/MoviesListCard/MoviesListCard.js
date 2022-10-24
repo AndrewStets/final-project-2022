@@ -1,5 +1,4 @@
 import {NavLink} from "react-router-dom";
-import {GanreBadge} from "../GenreBadge/GanreBadge";
 
 import {poster} from "../../configs";
 import {StarRating} from "../StarsRating/StarsRating";
@@ -11,7 +10,6 @@ function MoviesListCard({movie}) {
 
   return (
     <div className={css.movieCard}>
-        {/*<GanreBadge/>*/}
         <NavLink to={`/movies/${id}`} state={{...movie}} className={css.nav_link}>
             <div className={css.photo}>
                 <img src={`${poster}${poster_path}`} alt={title}/>

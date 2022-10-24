@@ -1,6 +1,7 @@
-import css from './Layout.module.css';
-import {Header} from '../../components';
 import {Outlet} from "react-router-dom";
+
+import {Header} from '../../components';
+import css from './Layout.module.css';
 
 function MainLayout() {
 

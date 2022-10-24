@@ -85,3 +85,7 @@ a:link{
 .movieCard a:active{
     text-decoration: none;
 }
+
+.nav_link{
+    color: #868383;
+}

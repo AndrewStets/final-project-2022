@@ -1,6 +1,6 @@
-import css from './MovieInfo.module.css';
-
 import {useLocation} from "react-router-dom";
+
+import css from './MovieInfo.module.css';
 
 function MovieInfo() {
 

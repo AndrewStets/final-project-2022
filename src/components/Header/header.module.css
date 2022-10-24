@@ -29,3 +29,11 @@
     color: #6e1717;
     border-color: #af6c6c;
 }
+
+.link_mov{
+    text-decoration-color: darkgray;
+    font-size: 40px;
+    padding-left: 40px;
+    margin-top: 40px;
+    color: #868383;
+}
